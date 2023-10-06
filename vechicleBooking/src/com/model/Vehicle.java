@@ -2,8 +2,8 @@ package com.model;
 
 public class Vehicle {
 	
-		private String regNo;
-	private VehicleCategory vehicleCat;
+	private String regNo;
+	private int vehicleCat;
 	private String manufacturer;
 	private int dailyRent;
 	private int mileage;
@@ -16,10 +16,10 @@ public class Vehicle {
 	public void setRegNo(String regNo) {
 		this.regNo = regNo;
 	}
-	public VehicleCategory getVehicleCat() {
+	public int getVehicleCat() {
 		return vehicleCat;
 	}
-	public void setVehicleCat(VehicleCategory vehicleCat) {
+	public void setVehicleCat(int vehicleCat) {
 		this.vehicleCat = vehicleCat;
 	}
 	public String getManufacturer() {
@@ -52,7 +52,7 @@ public class Vehicle {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public Vehicle(String regNo, VehicleCategory vehicleCat, String manufacturer, int dailyRent, int mileage,
+	public Vehicle(String regNo, int vehicleCat, String manufacturer, int dailyRent, int mileage,
 			String fuelType, String description) {
 		super();
 		this.regNo = regNo;
@@ -63,5 +63,12 @@ public class Vehicle {
 		this.fuelType = fuelType;
 		this.description = description;
 	}
+	@Override
+	public String toString() {
+		return "Registration Number = " + regNo + ", Vehicle Category = " + vehicleCat + ", Manufacturer = " + manufacturer
+				+ ", Daily Rent= " + dailyRent + ", Mileage = " + mileage + ", Fuel Type = " + fuelType + ", Description = "
+				+ description;
+	}
+	public Vehicle() {}
 	
 }

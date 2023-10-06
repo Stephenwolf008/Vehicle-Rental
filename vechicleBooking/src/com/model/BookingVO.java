@@ -65,6 +65,6 @@ public class BookingVO {
 		this.paymentReceived = paymentReceived;
 	}
 	
-	
+	public BookingVO() {}
 	
 }

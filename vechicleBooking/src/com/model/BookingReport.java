@@ -1,43 +1,33 @@
 package com.model;
 
+import java.util.ArrayList;
+
 public class BookingReport {
-	
-	private String vehicleType;
-	private int numberOfVehicles;
-	private int numberOfVehiclesRented;
-	private int totalRentEarned;
-	
-	public String getVechileType() {
-		return vehicleType;
+
+	ArrayList<ReportData> reportData = new ArrayList<>();
+
+	public ArrayList<ReportData> getReportData() {
+		return reportData;
 	}
-	public void setVechileType(String vehicleType) {
-		this.vehicleType = vehicleType;
+
+	public void setReportData(ArrayList<ReportData> bookings) {
+		this.reportData = bookings;
 	}
-	public int getNumberOfVehicles() {
-		return numberOfVehicles;
+
+	public void showReportdata() {
+		ArrayList<String> categories = new ArrayList<>();
+		categories.add("Bus");
+		categories.add("Car");
+		categories.add("Truck");
+		System.out.println("Category\tTotal_Vehicles\tTotal_Vehicles_Rented\tTotal_Rent_Earned");
+		for(int i=0;i<3;i++){
+			if(reportData.get(i).getNumberOfVehicles() != 0){
+				System.out.println(categories.get(i)+"\t"+reportData.get(i).getNumberOfVehicles()+"\t"+reportData.get(i).getNumberOfVehiclesRented()+"\t"+reportData.get(i).getTotalRentEarned());
+			}
+		}
+			
+		}
+
 	}
-	public void setNumberOfVehicles(int numberOfVehicles) {
-		this.numberOfVehicles = numberOfVehicles;
-	}
-	public int getNumberOfVehiclesRented() {
-		return numberOfVehiclesRented;
-	}
-	public void setNumberOfVehiclesRented(int numberOfVehiclesRented) {
-		this.numberOfVehiclesRented = numberOfVehiclesRented;
-	}
-	public int getTotalRentEarned() {
-		return totalRentEarned;
-	}
-	public void setTotalRentEarned(int totalRentEarned) {
-		this.totalRentEarned = totalRentEarned;
-	}
-	public BookingReport(String vehicleType, int numberOfVehicles, int numberOfVehiclesRented, int totalRentEarned) {
-		super();
-		this.vehicleType = vehicleType;
-		this.numberOfVehicles = numberOfVehicles;
-		this.numberOfVehiclesRented = numberOfVehiclesRented;
-		this.totalRentEarned = totalRentEarned;
-	}
-	
-	
-}
+
+
